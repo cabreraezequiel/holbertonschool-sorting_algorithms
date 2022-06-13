@@ -9,24 +9,28 @@
 
 void insertion_sort_list(listint_t **list)
 {
-	size_t i = 0;
-	int aux = 0, swap_number = 0;
+	listint_t *aux = *list, *swap;
 
-	while (i < size - 1)
+	while (aux->next != NULL)
 	{
-		if (array[i] > array[i + 1])
+		aux = aux->next;
+		swap = aux;
+
+		while (swap->prev != NULL && swap->n < swap->prev->n)
 		{
-			swap_number++;
-			aux = array[i];
-			array[i] = array[i + 1];
-			array[i + 1] = aux;
-			print_array(array, size);
-		}
-		i++;
-		if (swap_number > 0 && i == size - 1)
-		{
-			i = 0;
-			swap_number = 0;
+			swap->prev->next = swap->next;
+			if (swap->next != NULL)
+				swap->next->prev = swap->prev;
+			swap->next = swap->prev;
+			swap->prev = aux->prev->prev;
+			if (swap->prev != NULL)
+				swap->prev->next = swap;
+			swap->next->prev = swap;
+
+			if (swap->prev == NULL)
+				*list = swap;
+
+			print_list(*list);
 		}
 	}
 }
