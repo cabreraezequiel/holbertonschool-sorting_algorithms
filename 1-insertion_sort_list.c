@@ -11,7 +11,7 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *aux = *list, *swap;
 
-	if (list != NULL)
+	if (list != NULL && *list != NULL)
 	{
 	while (aux->next != NULL)
 	{
