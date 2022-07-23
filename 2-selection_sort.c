@@ -2,10 +2,10 @@
 #include <stdio.h>
 
 /**
- * insertion_sort_list - sorts a doubly linked list of integers in ascending
- * order using the Insertion sort algorithm
- *
- * @list: list
+ * selection_sort - sorts an array of integers in ascending
+ * order using the Selection sort algorithm
+ * @array: array
+ * @size: size
  */
 
 void selection_sort(int *array, size_t size)
