@@ -10,8 +10,8 @@
 
 void selection_sort(int *array, size_t size)
 {
-	size_t i = 0, j = 0;
-	int n = 0, pos = 0;
+	size_t i = 0, j = 0, pos = 0;
+	int n = 0;
 
 	if (!array)
 		return;
@@ -19,6 +19,7 @@ void selection_sort(int *array, size_t size)
 	{
 		n = array[i];
 		j = i + 1;
+		pos = i;
 		while (j < size)
 		{
 			if (n > array[j])
