@@ -11,6 +11,8 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *aux = *list, *swap;
 
+	if (list != NULL)
+	{
 	while (aux->next != NULL)
 	{
 		aux = aux->next;
@@ -32,5 +34,5 @@ void insertion_sort_list(listint_t **list)
 
 			print_list(*list);
 		}
-	}
+	}}
 }
